@@ -1,7 +1,7 @@
 /**
  * 方法一：数组去重，利用hash对象的思想
  *
- * @param {Array} 去重的数组
+ * @param {Array} arr 去重的数组
  * @return {Array} 去重后的数组
  */
 function arrUnique(arr) {
@@ -30,7 +30,7 @@ arrUnique([3, 5, 3, 7, 12, 7, 1, 1]);// [3, 5, 7, 12, 1]
 /**
  * 方法二：数组去重，利用indexOf()方法,需要注意的是IE低版本并没有该方法，此处没做兼容
  *
- * @param {Array} 去重的数组
+ * @param {Array} arr 去重的数组
  * @return {Array} 去重后的数组
  */
 function arrUnique(arr) {
@@ -54,10 +54,13 @@ arrUnique([3, 5, 3, 7, 12, 7, 1, 1]);// [3, 5, 7, 12, 1]
 
 
 /**
- * 方法二：数组去重，underscore的数组去重源码实现，该地方不可测试。
+ * 方法三：数组去重，underscore的数组去重源码实现，该地方不可测试。
  * 如果要测试，需要完整的underscore中的相关代码
  *
- * @param {Array} 去重的数组
+ * @param {Array} array 去重的数组
+ * @param {Boolean} isSorted 是否已经排好序
+ * @param {Function} iteratee 迭代函数
+ * @param {Object} context 上下文环境
  * @return {Array} 去重后的数组
  */
 _.uniq = _.unique = function (array, isSorted, iteratee, context) {
